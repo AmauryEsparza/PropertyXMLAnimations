@@ -73,4 +73,11 @@ public class MainActivity extends Activity {
         anim.setTarget(githubImage);
         anim.start();
     }
+
+    public void setAnimation(View v){
+        Animator anim = AnimatorInflater.loadAnimator(this, R.animator.set);
+        anim.setTarget(githubImage);
+        anim.start();
+    }
+
 }

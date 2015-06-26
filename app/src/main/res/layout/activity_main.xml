@@ -50,4 +50,13 @@
             android:onClick="alphaAnimation"
             android:id="@+id/button_alpha"/>
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/button_set"
+        android:onClick="setAnimation"/>
 </RelativeLayout>
