@@ -1,17 +1,31 @@
 package com.example.amaury.propertyxmlanimation;
 
-import android.support.v7.app.ActionBarActivity;
+import android.animation.Animator;
+import android.animation.AnimatorInflater;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
+    Button rotateButton, scaleButton, translateButton, alphaButton;
+    ImageView githubImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        rotateButton = (Button) findViewById(R.id.button_rotate);
+        scaleButton = (Button) findViewById(R.id.button_scale);
+        translateButton = (Button) findViewById(R.id.button_translate);
+        alphaButton = (Button) findViewById(R.id.button_alpha);
+
+        githubImage = (ImageView) findViewById(R.id.imageView);
     }
 
     @Override
@@ -35,4 +49,35 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void rotateAnimation(View v){
+        Animator anim = AnimatorInflater.loadAnimator(this, R.animator.rotate);
+        anim.setTarget(githubImage);
+        anim.start();
+    }
+
+    public void scaleAnimation(View v){
+        Animator anim = AnimatorInflater.loadAnimator(this, R.animator.scale);
+        anim.setTarget(githubImage);
+        anim.start();
+    }
+
+    public void translateAnimation(View v){
+        Animator anim = AnimatorInflater.loadAnimator(this, R.animator.translate);
+        anim.setTarget(githubImage);
+        anim.start();
+    }
+
+    public void alphaAnimation(View v){
+        Animator anim = AnimatorInflater.loadAnimator(this, R.animator.alpha);
+        anim.setTarget(githubImage);
+        anim.start();
+    }
+
+    public void setAnimation(View v){
+        Animator anim = AnimatorInflater.loadAnimator(this, R.animator.set);
+        anim.setTarget(githubImage);
+        anim.start();
+    }
+
 }
